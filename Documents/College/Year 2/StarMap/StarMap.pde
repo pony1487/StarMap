@@ -16,6 +16,14 @@ float gridHeight;
 float maxStarX;
 float maxStarY;
 
+//used to store coords of stars that are clicked
+float star1X;
+float star1Y;  
+float star2X;
+float star2Y;
+
+int value;
+
 void setup()
 {
   size(800,800);
@@ -39,6 +47,7 @@ void draw()
   drawStars();
   
   drawGrid();
+  //is hidden by the grid;
   clickStar();
   
   
@@ -193,15 +202,26 @@ void clickStar()
 {
    //to do
    //rushed and ran out of time, not quite working
-    for(int i = 0; i < stars.size();i++)
+   //very messy from here on
+   
+  
+   
+   
+  for(int i = 0; i < stars.size();i++)
   {
     float mappedX = map(stars.get(i).x, -5, maxStarX, border, width - border);
     float mappedY = map(stars.get(i).y, -5, maxStarY, border, height - border);
     
-    if((mouseX == mappedX) || (mouseY == mappedY) || (mouseX == mappedX - 5) || (mouseY == mappedY - 5))
+    
+    if((mouseX == mappedX) || (mouseY == mappedY) || (mouseX == mappedX - 10) || (mouseY == mappedY - 10))
     {
       fill(0);
       strokeWeight(3);
+      
+      star1X = stars.get(i).x;
+      star1Y = stars.get(i).y;
+      
+      star2X = stars.get(i).x;
       line(border, border, stars.get(i).x, stars.get(i).y);
       
     }
@@ -209,4 +229,12 @@ void clickStar()
   }
   
   
+}
+
+void mousePressed() {
+  if (value == 0) {
+    //star1X = 255;
+  } else {
+    value = 0;
+  }
 }
