@@ -36,8 +36,11 @@ void draw()
 {
   background(0);
   printStars();
-   drawStars();
+  drawStars();
+  
   drawGrid();
+  clickStar();
+  
   
   
 }//end draw()
@@ -188,7 +191,22 @@ void findMax()
 
 void clickStar()
 {
-   //to do 
+   //to do
+   //rushed and ran out of time, not quite working
+    for(int i = 0; i < stars.size();i++)
+  {
+    float mappedX = map(stars.get(i).x, -5, maxStarX, border, width - border);
+    float mappedY = map(stars.get(i).y, -5, maxStarY, border, height - border);
+    
+    if((mouseX == mappedX) || (mouseY == mappedY) || (mouseX == mappedX - 5) || (mouseY == mappedY - 5))
+    {
+      fill(0);
+      strokeWeight(3);
+      line(border, border, stars.get(i).x, stars.get(i).y);
+      
+    }
+    
+  }
   
   
 }
