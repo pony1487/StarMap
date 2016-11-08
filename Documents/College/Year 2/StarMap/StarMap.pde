@@ -150,6 +150,8 @@ void drawStars()
     //print cirlce
     noFill();
     ellipse(mappedX, mappedY, stars.get(i).size,stars.get(i).size);
+    textAlign(CENTER);
+    text(stars.get(i).name, mappedX + 10, mappedY + 20);
   }
   
 }
