@@ -183,4 +183,12 @@ void findMax()
     
   }
   
+}//end max
+
+
+void clickStar()
+{
+   //to do 
+  
+  
 }
